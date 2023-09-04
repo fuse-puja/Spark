@@ -21,6 +21,26 @@ This README file provides comprehensive instructions and examples for performing
 13. [Pivot](#pivot)
 
 ---
+# Joins 
+
+## Introduction
+
+This README file provides comprehensive instructions and examples for performing various types of joins between DataFrames using PySpark. We will work with two DataFrames: `employees_df` and `departments_df`, which contain employee and department information, respectively.
+
+## Table of Contents
+
+1. [Join Expressions](#join-expressions)
+2. [Inner Joins](#inner-joins)
+3. [Outer Joins](#outer-joins)
+4. [Left Outer Joins](#left-outer-joins)
+5. [Right Outer Joins](#right-outer-joins)
+6. [Left Semi Joins](#left-semi-joins)
+7. [Left Anti Joins](#left-anti-joins)
+8. [Cross (Cartesian) Joins](#cross-cartesian-joins)
+   
+---
+
+
 # Initialize PySpark Session
 
 Initialize a PySpark session to set up the environment for data analysis and aggregation. PySpark is a powerful tool for processing large datasets using the Apache Spark framework.
@@ -72,3 +92,46 @@ Use window functions to perform calculations over a specified range of rows with
 # Pivot
 
 Learn how to pivot data to restructure it based on column values, facilitating analysis. Helpful for transforming data for reporting or visualization purposes.
+
+---
+
+# Joins
+
+# Join Expressions
+- Join expressions allow you to combine DataFrames based on common columns.
+- Common expressions include inner, outer, left outer, right outer, semi, and anti joins.
+- Join expressions are essential for merging data from multiple sources or tables.
+
+# Inner Joins
+- Inner joins return rows where a condition is met in both DataFrames.
+- Useful for extracting data that exists in both tables.
+- Example: Retrieving employees in the "Engineering" department.
+
+# Outer Joins
+- Outer joins combine data from both DataFrames, filling missing values with specified defaults.
+- Common types include left outer, right outer, and full outer joins.
+- Useful for preserving all data, even if it doesn't have a corresponding match in the other DataFrame.
+
+# Left Outer Joins
+- Left outer joins return all rows from the left DataFrame and matching rows from the right DataFrame.
+- Suitable for scenarios where you want to keep all records from one DataFrame and only matching records from the other.
+
+# Right Outer Joins
+- Right outer joins are similar to left outer joins but prioritize keeping all records from the right DataFrame.
+- Useful when you want to retain all department records, including those without employees.
+
+# Left Semi Joins
+- Left semi joins return rows from the left DataFrame where a condition is met in the right DataFrame.
+- Valuable for extracting data from the left DataFrame based on a condition in the right DataFrame.
+
+# Left Anti Joins
+- Left anti joins return rows from the left DataFrame where a condition is NOT met in the right DataFrame.
+- Helpful for identifying records in the left DataFrame that have no corresponding match in the right DataFrame.
+
+# Cross (Cartesian) Joins
+- Cross joins generate a DataFrame containing all possible combinations of rows from both DataFrames.
+- Resulting DataFrame can be large, so use with caution.
+- Useful when you need to explore all combinations of data.
+
+These join operations are fundamental for data integration and analysis, helping you extract valuable insights from diverse datasets. Choose the appropriate join type based on your specific data manipulation needs.
+
